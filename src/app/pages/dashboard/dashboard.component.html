@@ -1,0 +1,7 @@
+<nav class="bg-gray-800 text-white p-4">
+    <ul class="flex justify-between items-center">
+      <li><a routerLink="/shop" class="hover:text-gray-300">Shop</a></li>
+      <li><a routerLink="/cart" class="hover:text-gray-300">Cart ({{ cartItemCount$ | async }})</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="flex font-serif border rounded-lg p-1.5" *ngFor="let product of products">
+        <div class="flex-none w-52 relative">
+        <img [src]="product?.thumbnail" [alt]="" class="absolute inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+        </div>
+        <div class="flex-auto p-6">
+        <div class="flex flex-wrap items-baseline">
+            <h1 class="w-full flex-none mb-3 text-2xl leading-none" style="    font-family: IBMPlexMono-SemiBold;
+            font-size: 1.4rem;
+            line-height: 2rem;">
+                {{ product.title }}
+            </h1>
+            <div class="flex-auto text-lg font-medium text-slate-500">
+                ₹{{ product.price }}
+            </div>
+            <span *ngIf="product.discountPercentage > 0" class="bg-red-500 text-white px-2 py-1 rounded-full text-sm">
+                {{ product.discountPercentage }}% OFF
+             </span>
+        </div>
+        <div class="flex space-x-4 mt-5 text-sm font-medium">
+            <div class="flex-auto flex space-x-4 pr-4 float-right">
+            <button class="flex-none w-1/2 h-12 uppercase font-medium tracking-wider bg-white text-black text-sm border" type="submit" (click)="addToCart(product)" >
+                Add to bag
+            </button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
